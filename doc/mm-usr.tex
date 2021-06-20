@@ -1,0 +1,547 @@
+\documentclass[12pt]{article}
+
+\usepackage[english]{malayalam}
+\usepackage[a4paper,margin=.8in]{geometry}
+\usepackage{hhline}
+\usepackage[colorlinks=true,	pdftitle={Typesetting Malayalam Using LaTeX},	pdfauthor={Alex A.J.}]{hyperref}
+
+
+\begin{document}
+
+
+\title{\bfseries Typesetting Malayalam Using \LaTeXe}
+\author{{\bfseries Alex A.J.}\\
+\href{mailto:tex@alex.org.in}{(tex@alex.org.in)}}
+\date{}
+\maketitle
+
+\noindent \copyright\ Copyright 2003,2005,2007,2017 Alex A.J.
+This document is freely redistributable.
+
+
+\tableofcontents
+
+\medskip
+
+\hrule
+
+\section{Introduction}
+
+\subsection{History}
+
+Typesetting Malayalam using \TeX\ was first attempted in the
+pioneering work done by {\bf Mr.~Jeroen Hellingman}. He designed
+a basic metafont containing all letter forms necessary for
+typesetting traditional and reformed (old and new lipi)
+Malayalam script. Since there was no keyboard
+to input Malayalam script directly, Mr.~Hellingman used a
+transliteration scheme in ASCII to prepare the \TeX\ source file.
+He also wrote a pre-processor in C to arrange the necessary
+syllables according to the transcripted input file.
+Various plain \TeX\ macros were also written for effective
+glyph placement. The last stable release of Hellingman's
+Malayalam-\TeX\ package is version 1.6.
+
+\subsection{New Package for Malayalam}
+
+Hellingman's package was designed to work with plain \TeX\ only.
+However, this new release provides full \LaTeX\ compatibility.
+An improved version of Hellingman's pre-processor is used
+for pre-processing Malayalam source files. Traditional
+style hyphenation is also implemented.
+
+\subsection{Fonts Available With the Package}
+
+This package includes two Malayalam fonts, {\bf Keli}{\mm (\-\X{\<117>\<73>}\-\X{\<106>\<111>}\K{.1}{)}}
+and {\bf Rachana}{\mm (\-\X{\<99>}\-\X{\<78>}\-\X{\<92>}\K{.1}{)}}. The Rachana family includes
+all characters in the Malayalam Traditional Script {\mm (\-\X{\<93>}\-\X{\<107>}\-\X{\<98>}
+\-\X{\<100>\<111>}\-\X{\<93>\<111>}\K{.1}{)}}.
+
+If you install the package \textbf{ildc-cdac} available from the project page,
+you will get additional font families. See the next section for details.
+
+Support for 15 font families from CDAC ISM Publisher
+is also provided (the actual Type1 files are not included in
+the package; see the section on installation of the package).
+
+\vfill\eject
+
+\section{Obtaining and Installing the Package}
+
+\subsection{System Requirements}
+
+The package should work on any Linux system
+with a working \TeX\ distribution.
+The {\href{http://www.vim.org}{{\bfseries vim}} editor is also
+required in the pre-processing stage.
+Some determined hacking is required to get the
+package working on non-Linux systems. 
+
+\subsection{Where to Get It}
+
+The latest tarballs of the project can be downloaded from:
+
+{\href{https://alex.org.in/tex}{\bfseries https://alex.org.in/tex}}
+
+If you want to install the fonts from ILDC CD-ROM,
+download the \textbf{ildc-cdac} package also.
+
+\subsection{Installing under Linux}
+
+A {\itshape bash} script is provided for easy installation
+on Linux systems. Follow the steps below to install:
+
+\begin{enumerate}
+\item Download the package and copy it to a temporary
+directory on your system.
+\item Untar it using `{\tt tar -xvzf malayalam-latex-x.x.x.tar.gz}',
+and change to the top level directory by issuing
+`{\tt cd malayalam-latex-x.x.x}'.
+\item Run the installation script by issuing the
+command `{\tt ./install.sh}'.
+\item The installation will ask you to choose some
+directories for installing the files. The defaults
+should be okey for most Linux systems.
+\item If you choose something other than the default
+directories, be sure to follow the instructions given
+at the end of the installation.
+\end{enumerate}
+
+\subsection{Fonts from the `ILDC' CD-ROM}
+
+In 2006, \textbf{Ministry of Communication and Information Technology}, Govt. of India
+brought out a CD-ROM as part of their \textbf{Technology Development for Indian Languages
+(TDIL} project\footnote{\texttt{http://ildc.in}}. The CD contains several Malayalam fonts
+from various sources. The fonts by CDAC can now be used with this package. The fonts
+can be downloaded as a separate package `\textbf{ildc-cdac}' from 
+{\href{https://alex.org.in/tex}{\bfseries https://alex.org.in/tex}}. Installation
+is explained in the README file with the package.
+
+
+\subsection{Fonts from ISM Publisher}
+
+ISM Publisher, developed by CDAC, is one of the best solutions for
+typesetting in Indian languages. The Malayalam section comes with a wide variety
+of beautiful fonts both in TrueType and Type1 formats. The Type1 fonts
+can now be used in this latest release of the \LaTeX\ package
+for Malayalam.
+
+ISM is proprietory software, and the font files are copyrighted,
+so the actual \textbf{.pfb} files are not included with this package.
+You may get them from an ISM CD-ROM.
+
+Installation:
+
+\begin{enumerate}
+
+\item Mount the ISM CD-ROM and cd to \verb"Fonts/MALYALAM/PSFONTS/"
+
+\textbf{Note: I used ISM version 3.04. The fonts may not be present
+in older versions before 3.0.}
+
+\item Make the directory \verb"{TEXMF}/fonts/type1/malayalam/ism"
+
+\item Copy all the \textbf{.pfb} files to \verb"{TEXMF}/fonts/type1/malayalam/ism"\footnote{/usr/share/texmf/ is the default TEXMF
+root folder on Linux. Change it according to your installation.}
+
+\item Issue the command \texttt{texhash} or \texttt{mktexlsr} to update
+\TeX{}'s filename database.
+
+\end{enumerate}
+
+
+\subsection{Installation on Other Platforms}
+
+Currently, non-Linux platforms are not supported.
+
+\vfill\eject
+
+\section{Working With Malayalam}
+
+\subsection{Preparing Your Document}
+
+Malayalam source files normally have `.mm' extension.
+It is written just like a normal \LaTeX\ file, but
+Malayalam text is written in a phonetic transliteration scheme.
+This file is pre-processed to get the proper \TeX\ source file.
+
+To typeset Malayalam, you have to include the
+following line in the preamble of your source file:
+
+\noindent {\verb"\usepackage[options]{malayalam}"}
+
+\noindent Currently the supported options are:
+
+\begin{itemize}
+\item No options: If no options are specified, the Reformed script
+({\mm \-\X{\<93>\<113>}\-\X{\<88>\<111>}\-\X{\<98>} \-\X{\<100>\<111>}\-\X{\<93>\<111>}}) from the Rachana font family
+will be used.
+\item `{\tt rachana}': for the Traditional script
+({\mm \-\X{\<93>}\-\X{\<107>}\-\X{\<98>} \-\X{\<100>\<111>}\-\X{\<93>\<111>}})from the Rachana family.
+\item `{\tt keli}': for the Keli font (\verb"\usepackage[keli]{malayalam}").
+\item See Appendix for using the ILDC Fonts (For e.g., \verb"\usepackage[revathi]{malayalam}").
+\item `{\tt english}': use this option when you want to include
+some Malayalam text in an english document.
+\item See Appendix for using ISM fonts.
+\end{itemize}
+
+\subsection{Typing Malayalam}
+
+Malayalam text is entered in a phonetic tranliteration scheme
+that uses the standard ASCII character set. All Malayalam
+matter must be enclosed between `{\tt <m{}>}' and
+`{\tt </m{}>}'. Anything outside these delimiters will come out
+in English. {\bf Table~\ref{tbl:trans}} shows the ASCII character(s)
+you have to type in order to generate a Malayalam character.
+The common ligatures ({\mm \-\X{\<73>\<114>}\-\X{\<189>}\-\X{\<184>}\-\X{\<99>}\-\X{\<186>}\-\X{\<179>}}) available with
+the package are shown in {\bf Table~\ref{tbl:lig}}.
+
+The input file is then preprocessed to generate a {\tt .tex} file.
+Instructions for pre-processing can be found in
+{\bf Section~\ref{sec:preprocess}} on
+{\bf page~\pageref{sec:preprocess}}.
+
+\begin{table}[!hbp]
+\caption{Malayalam Transliteration Table}
+\label{tbl:trans}
+{\Large
+\begin{center}
+\begin{tabular}{||l|c||l|c||l|c||}
+\hhline{|t:==:t:==:t:==:t|}
+{\tt a}         & {\mm \-\X{\<65>}}      &
+{\tt ka}        & {\mm \-\X{\<73>}}     &
+{\tt pa}        & {\mm \-\X{\<93>}}\\   \hhline{||--||--||--||}
+{\tt aa, A}     & {\mm \-\X{\<66>}}      &
+{\tt kha}       & {\mm \-\X{\<74>}}    &
+{\tt fa, pha}   & {\mm \-\X{\<94>}}\\   \hhline{||--||--||--||}
+{\tt i}         & {\mm \-\X{\<67>}}      &
+{\tt ga}        & {\mm \-\X{\<75>}}     &
+{\tt ba}        & {\mm \-\X{\<95>}}\\   \hhline{||--||--||--||}
+{\tt ii, I}     & {\mm \-\X{\<164>}}      &
+{\tt gha}       & {\mm \-\X{\<76>}}    &
+{\tt bha}       & {\mm \-\X{\<245>}}\\  \hhline{||--||--||--||}
+{\tt u}         & {\mm \-\X{\<68>}}      &
+{\tt n"a}       & {\mm \-\X{\<77>}}    &
+{\tt ma}        & {\mm \-\X{\<97>}}\\   \hhline{||--||--||--||}
+{\tt uu,U}      & {\mm \-\X{\<165>}}      &
+{\tt ca}        & {\mm \-\X{\<78>}}     &
+{\tt ya}        & {\mm \-\X{\<98>}}\\   \hhline{||--||--||--||}
+{\tt .r}        & {\mm \-\X{\<69>}}     &
+{\tt cha}       & {\mm \-\X{\<79>}}    &
+{\tt ra}        & {\mm \-\X{\<99>}}\\   \hhline{||--||--||--||}
+{\tt e}         & {\mm \-\X{\<70>}}      &
+{\tt ja}        & {\mm \-\X{\<80>}}     &
+{\tt la}        & {\mm \-\X{\<100>}}\\   \hhline{||--||--||--||}
+{\tt ee, E}     & {\mm \-\X{\<71>}}      &
+{\tt jha}       & {\mm \-\X{\<81>}}    &
+{\tt va}        & {\mm \-\X{\<101>}}\\   \hhline{||--||--||--||}
+{\tt ai}        & {\mm \-\X{\<166>}}     &
+{\tt n\~{}a}    & {\mm \-\X{\<82>}}    &
+{\tt sha}       & {\mm \-\X{\<102>}}\\  \hhline{||--||--||--||}
+{\tt o}         & {\mm \-\X{\<72>}}      &
+{\tt Ta}        & {\mm \-\X{\<83>}}     &
+{\tt Sa}        & {\mm \-\X{\<103>}}\\   \hhline{||--||--||--||}
+{\tt oo, O}     & {\mm \-\X{\<168>}}      &
+{\tt Tha}       & {\mm \-\X{\<84>}}    &
+{\tt sa}        & {\mm \-\X{\<104>}}\\   \hhline{||--||--||--||}
+{\tt au}        & {\mm \-\X{\<169>}}     &
+{\tt Da}        & {\mm \-\X{\<85>}}     &
+{\tt ha}        & {\mm \-\X{\<105>}}\\   \hhline{||--||--||--||}
+{\tt M}         & {\mm \<119>}      &
+{\tt Dha}       & {\mm \-\X{\<86>}}    &
+{\tt La}        & {\mm \-\X{\<106>}}\\   \hhline{||--||--||--||}
+{\tt H}         & {\mm \<120>}      &
+{\tt Na}        & {\mm \-\X{\<87>}}     &
+{\tt zha}       & {\mm \-\X{\<107>}}\\  \hhline{||--||--||--||}
+                &               &
+{\tt ta}        & {\mm \-\X{\<88>}}     &
+{\tt Ra}        & {\mm \-\X{\<108>}}\\   \hhline{||--||--||--||}
+                &               &
+{\tt tha}       & {\mm \-\X{\<89>}}    &
+{\tt +}         & {\mm \<109>}\\    \hhline{||--||--||--||}
+                &               &
+{\tt da}        & {\mm \-\X{\<90>}}     &
+                &   \\          \hhline{||--||--||--||}
+                &               &
+{\tt dha}       & {\mm \-\X{\<91>}}    &
+                &       \\      \hhline{||--||--||--||}
+                &               &
+{\tt na}        & {\mm \-\X{\<92>}}     &
+                &     \\        \hhline{|b:==:b:==:b:==:b|}
+\end{tabular}
+\end{center}
+}
+
+\end{table}
+
+\begin{table}[!hbp]
+\caption{Common ligatures ({\mm \-\X{\<73>\<114>}\-\X{\<189>}\-\X{\<184>}\-\X{\<99>}\-\X{\<186>}\-\X{\<179>}}) available
+with the package}
+\label{tbl:lig}
+{\Large
+\begin{center}
+\begin{tabular}{||c|c||c|c||c|c||}
+\hhline{|t:==:t:==:t:==:t|}
+{\mm \-\X{\<183>}}      & {\tt kka}     &
+{\mm \-\X{{\D\<56>}}}      & {\tt pla}     &
+{\mm \-\X{{\F\<49>}}}      & {\tt hma}\\   \hhline{||--||--||--||}
+{\mm \-\X{{\B\<66>}}}      & {\tt kla}     &
+{\mm \-\X{{\D\<123>}}}      & {\tt bba}     &
+{\mm \-\X{{\F\<46>}}}      & {\tt hna}\\   \hhline{||--||--||--||}
+{\mm \-\X{\<184>}}      & {\tt kSa}     &
+{\mm \-\X{{\D\<163>}}}      & {\tt bla}     &
+{\mm \-\X{{\C\<225>}}}     & {\tt ndha}\\  \hhline{||--||--||--||}
+{\mm \-\X{{\B\<92>}}}      & {\tt gga}     &
+{\mm \-\X{\<196>}}      & {\tt npa}     &
+{\mm \-\X{{\C\<101>}}}      & {\tt tsa}\\   \hhline{||--||--||--||}
+{\mm \-\X{{\B\<117>}}}      & {\tt gla}     &
+{\mm \-\X{\<197>}}      & {\tt mma}     &
+{\mm \-\X{{\B\<195>}}}      & {\tt jja}\\   \hhline{||--||--||--||}
+{\mm \-\X{\<185>}}     & {\tt n"ka}    &
+{\mm \-\X{{\D\<195>}}}      & {\tt mla}     &
+--      	& --\\   	\hhline{||--||--||--||}
+{\mm \-\X{\<186>}}    & {\tt n"n"a}   &
+{\mm \-\X{\<199>}}      & {\tt yya}     &
+{\mm \-\X{{\E\<217>}}}     & {\tt stha}\\  \hhline{||--||--||--||}
+{\mm \-\X{\<187>}}      & {\tt cca}     &
+{\mm \-\X{\<202>}}      & {\tt RRa}     &
+{\mm \-\X{{\C\<215>}}}     & {\tt ntha}\\  \hhline{||--||--||--||}
+{\mm \-\X{{\B\<213>}}}     & {\tt n\~{}ca} &
+{\mm \-\X{\<200>}}      & {\tt lla}     &
+{\mm \-\X{{\B\<199>}}}     & {\tt jn\~{}a}\\ \hhline{||--||--||--||}
+{\mm \-\X{\<188>}}    & {\tt n\~{}n\~{}a} &
+{\mm \-\X{\<201>}}      & {\tt LLa}     &
+{\mm \-\X{{\C\<86>}}}     & {\tt tbha}\\  \hhline{||--||--||--||}
+{\mm \-\X{\<189>}}      & {\tt TTa}     &
+{\mm \-\X{{\E\<70>}}}      & {\tt vva}     &
+{\mm \-\X{{\B\<111>}}}      & {\tt gma}\\   \hhline{||--||--||--||}
+{\mm \-\X{\<190>}}      & {\tt NTa}     &
+{\mm \-\X{{\E\<94>}}}     & {\tt shla}    &
+{\mm \-\X{{\B\<97>}}}      & {\tt gda}\\   \hhline{||--||--||--||}
+{\mm \-\X{{\C\<66>}}}      & {\tt NNa}     &
+{\mm \-\X{{\E\<98>}}}    & {\tt shsha}   &
+--    		& --\\ 		\hhline{||--||--||--||}
+{\mm \-\X{\<191>}}      & {\tt tta}     &
+{\mm \-\X{{\E\<241>}}}      & {\tt sla}     &
+{\mm \-\X{{\E\<76>}}}     & {\tt shca}\\  \hhline{||--||--||--||}
+{\mm \-\X{{\C\<81>}}}     & {\tt ttha}    &
+{\mm \-\X{{\E\<244>}}}      & {\tt ssa}     &
+{\mm \-\X{{\C\<55>}}}      & {\tt NDa}\\   \hhline{||--||--||--||}
+{\mm \-\X{{\C\<165>}}}      & {\tt dda}     &
+{\mm \-\X{{\F\<56>}}}      & {\tt hla}     &
+{\mm \-\X{{\C\<62>}}}     & {\tt NDha}\\  \hhline{||--||--||--||}
+{\mm \-\X{{\C\<170>}}}     & {\tt ddha}    &
+{\mm \-\X{{\F\<36>}}}     & {\tt sRRa}    &
+{\mm \-\X{{\C\<90>}}}      & {\tt tma}\\   \hhline{||--||--||--||}
+{\mm \-\X{{\C\<208>}}}      & {\tt nta}     &
+{\mm \-\X{{\B\<239>}}}      & {\tt DDa}     &
+{\mm \-\X{{\C\<85>}}}      & {\tt tna}\\   \hhline{||--||--||--||}
+{\mm \-\X{\<192>}}      & {\tt nda}     &
+--      	& --	     	&
+{\mm \-\X{{\B\<50>}}}      & {\tt kta}\\   \hhline{||--||--||--||}
+{\mm \-\X{\<193>}}      & {\tt nna}     &
+--     		& --    	&
+{\mm \-\X{{\B\<108>}}}      & {\tt gna}\\   \hhline{||--||--||--||}
+{\mm \-\X{{\C\<238>}}}      & {\tt nma}     &
+--      	& --		&
+{\mm \-\X{\<194>}}      & {\tt nRa}\\   \hhline{||--||--||--||}
+{\mm \-\X{\<195>}}      & {\tt ppa}     &
+{\mm \-\X{{\B\<177>}}}     & {\tt ccha}    &
+{\mm \-\X{{\E\<119>}}}      & {\tt STa}\\   \hhline{|b:==:b:==:b:==:b|}
+\end{tabular}
+\end{center}
+}
+\end{table}
+
+\vfill\eject
+
+\subsection{An Example of Malayalam Input}
+
+Given below is a typical example of Malayalam input and its
+compiled output\footnote{Excerpt from {\mm \K{-.1}{\RMF``}\-\X{\<90>}\-\X{\<184>\<111>}\-\X{\<117>\<87>}\-\X{{\C\<208>}\<121>}\-\X{\<176>} \-\X{\<104>}\<119>\-\X{\<75>\<112>}\-\X{\<88>}\<119>\K{.15}{\RMF''}}
+by A.K. Ravindranath}.
+
+\subsubsection{The Roman Input}
+
+\noindent {\tt <m{}>}
+\begin{verbatim}
+atiprAcInakAlaMmutalkkutanne shabdan"n"aLuTEyuM
+bhAvahAvAdikaLuTEyuM sahAyattOTukUTi AshayaprakaTanaM
+naTattAn manuSyaR paThiccukazhin~n~irunnu.
+manuSyasharIrattinnuLLilttanneyuLLa h.rdayaM,
+shvAsakOshaM ennI avayavan"n"aLuTe kramaMteRRAteyuLLa
+calanaM avann tALabOdhattinnuLLa AdyapAThan"n"aL
+nalkiyirikkaNaM. atupOlettanne prak.rtiyilninnuM
+avan nityEna kELkkunna saMgItaM---atAyat pakSikaLuTe
+kaLakUjanan"n"aL, kARRinRe maRmmarashabdaM, tEnIccakaLuTe
+mULakkaM, ozhukunna veLLattinRe kaLakaLashabdaM,
+muLan"kATukaLkkiTayilUTe kARRaTikkunpOzhuNTAkunna
+cULaMviLi, m.rgan"n"aLuTe vividharItiyiluLLa shabdan"n"aL
+tuTan"n"iyavayellAM---avanRe saMgItAsvAdanashESiyEyuM
+kramaprav.rddhamAyi vaLaRttikkoNTuvannu. manuSyamastiSkkattinRe
+vaLaRccayuTe tOtanusaricc madhurasvaran"n"aL kETTAsvadikkAnuLLa
+ceviyuTe kazhiv dinaMprati vaLaRnnuvannu. jIvitOpAdhikaL
+sanpAdikkAnuLLa kUTTAya pravaRttanan"n"aLkkiTayil
+AshayavinimayattinRe AvashyakatayuM tanmUlaM bhASayuM
+utbhaviccu vikasiccatupOlettanne jIvitaklEshan"n"aLkkiTayil
+ninnu niR{}v.rtiyuM, kUTTAya addhvAnattinnuLLa pracOdanavuM
+nETENTa AvashyattinnanusariccAN<<+ manuSyanRe
+saMgItaparamAya kazhivukaLuM vaLaRnnu vikasiccat.
+\end{verbatim}
+\noindent {\tt </m{}>}
+
+\subsubsection{The Malayalam Output}
+
+{\mm 
+\-\X{\<65>}\-\X{\<88>\<111>}\-\X{\<125>\<93>\<110>}\-\X{\<78>\<112>}\-\X{\<92>}\-\X{\<73>\<110>}\-\X{\<100>}\<119>\-\X{\<97>\<113>}\-\X{\<88>}\-\X{\<178>\<183>\<113>}\-\X{\<88>}\-\X{\<116>\<193>} \-\X{\<102>}\-\X{\<95>\<109>\<90>}\-\X{\<186>}\-\X{\<106>\<113>}\-\X{\<117>\<83>}\-\X{\<98>\<113>}\<119>
+\-\X{\<245>\<110>}\-\X{\<101>}\-\X{\<105>\<110>}\-\X{\<101>\<110>}\-\X{\<90>\<111>}\-\X{\<73>}\-\X{\<106>\<113>}\-\X{\<117>\<83>}\-\X{\<98>\<113>}\<119> \-\X{\<104>}\-\X{\<105>\<110>}\-\X{\<98>}\-\X{\<117>\<191>\<110>}\-\X{\<83>\<113>}\-\X{\<73>\<114>}\-\X{\<83>\<111>} \-\X{\<66>}\-\X{\<102>}\-\X{\<98>}\-\X{\<125>\<93>}\-\X{\<73>}\-\X{\<83>}\-\X{\<92>}\<119>
+\-\X{\<92>}\-\X{\<83>}\-\X{\<191>\<110>}\-\X{\<176>} \-\X{\<97>}\-\X{\<92>\<113>}\-\X{\<103>\<121>}\-\X{\<177>} \-\X{\<93>}\-\X{\<84>\<111>}\-\X{\<187>\<113>}\-\X{\<73>}\-\X{\<107>\<111>}\-\X{\<188>\<111>}\-\X{\<99>\<113>}\-\X{\<193>\<113>}\K{.1}{.}
+\-\X{\<97>}\-\X{\<92>\<113>}\-\X{\<103>\<121>}\-\X{\<102>}\-\X{\<99>\<112>}\-\X{\<99>}\-\X{\<191>\<111>}\-\X{\<193>\<113>}\-\X{\<201>\<111>}\-\X{\<178>\<191>}\-\X{\<116>\<193>}\-\X{\<98>\<113>}\-\X{\<201>} \-\X{\<105>\<115>}\-\X{\<90>}\-\X{\<98>}\<119>\K{.1}{,}
+\-\X{\<102>\<124>\<110>}\-\X{\<104>}\-\X{\<117>\<73>\<110>}\-\X{\<102>}\<119> \-\X{\<70>}\-\X{\<193>\<112>} \-\X{\<65>}\-\X{\<101>}\-\X{\<98>}\-\X{\<101>}\-\X{\<186>}\-\X{\<106>\<113>}\-\X{\<116>\<83>} \-\X{\<125>\<73>}\-\X{\<97>}\<119>\-\X{\<116>\<88>}\-\X{\<202>\<110>}\-\X{\<116>\<88>}\-\X{\<98>\<113>}\-\X{\<201>}
+\-\X{\<78>}\-\X{\<100>}\-\X{\<92>}\<119> \-\X{\<65>}\-\X{\<101>}\-\X{\<193>\<109>} \-\X{\<88>\<110>}\-\X{\<106>}\-\X{\<117>\<95>\<110>}\-\X{\<91>}\-\X{\<191>\<111>}\-\X{\<193>\<113>}\-\X{\<201>} \-\X{\<66>}\-\X{\<90>\<121>}\-\X{\<93>\<110>}\-\X{\<84>}\-\X{\<186>}\-\X{\<179>}
+\-\X{\<92>}\-\X{\<178>\<73>\<111>}\-\X{\<98>\<111>}\-\X{\<99>\<111>}\-\X{\<183>}\-\X{\<87>}\<119>\K{.1}{.} \-\X{\<65>}\-\X{\<88>\<113>}\-\X{\<117>\<93>\<110>}\-\X{\<116>\<100>}\-\X{\<191>}\-\X{\<116>\<193>} \-\X{\<125>\<93>}\-\X{\<73>\<115>}\-\X{\<88>\<111>}\-\X{\<98>\<111>}\-\X{\<178>\<92>\<111>}\-\X{\<193>\<113>}\<119>
+\-\X{\<65>}\-\X{\<101>}\-\X{\<176>} \-\X{\<92>\<111>}\-\X{\<117>\<88>\<121>}\-\X{\<92>} \-\X{\<117>\<73>}\-\X{\<179>\<183>\<113>}\-\X{\<193>} \-\X{\<104>}\<119>\-\X{\<75>\<112>}\-\X{\<88>}\<119>\K{.1}{\RMF---}\-\X{\<65>}\-\X{\<88>\<110>}\-\X{\<98>}\-\X{\<88>\<109>} \-\X{\<93>}\-\X{\<184>\<111>}\-\X{\<73>}\-\X{\<106>\<113>}\-\X{\<116>\<83>}
+\-\X{\<73>}\-\X{\<106>}\-\X{\<73>\<114>}\-\X{\<80>}\-\X{\<92>}\-\X{\<186>}\-\X{\<179>}\K{.1}{,} \-\X{\<73>\<110>}\-\X{\<202>\<111>}\-\X{\<116>\<194>} \-\X{\<97>}\-\X{\<177>\<197>}\-\X{\<99>}\-\X{\<102>}\-\X{\<95>\<109>\<90>}\<119>\K{.1}{,} \-\X{\<117>\<88>}\-\X{\<92>\<112>}\-\X{\<187>}\-\X{\<73>}\-\X{\<106>\<113>}\-\X{\<116>\<83>}
+\-\X{\<97>\<114>}\-\X{\<106>}\-\X{\<183>}\<119>\K{.1}{,} \-\X{\<72>}\-\X{\<107>\<113>}\-\X{\<73>\<113>}\-\X{\<193>} \-\X{\<116>\<101>}\-\X{\<201>}\-\X{\<191>\<111>}\-\X{\<116>\<194>} \-\X{\<73>}\-\X{\<106>}\-\X{\<73>}\-\X{\<106>}\-\X{\<102>}\-\X{\<95>\<109>\<90>}\<119>\K{.1}{,}
+\-\X{\<97>\<113>}\-\X{\<106>}\-\X{\<185>\<110>}\-\X{\<83>\<113>}\-\X{\<73>}\-\X{\<179>\<183>\<111>}\-\X{\<83>}\-\X{\<98>\<111>}\-\X{\<100>\<114>}\-\X{\<116>\<83>} \-\X{\<73>\<110>}\-\X{\<202>}\-\X{\<83>\<111>}\-\X{\<183>\<113>}\-\X{\<117>\<196>\<110>}\-\X{\<107>\<113>}\-\X{\<190>\<110>}\-\X{\<73>\<113>}\-\X{\<193>}
+\-\X{\<78>\<114>}\-\X{\<106>}\<119>\-\X{\<101>\<111>}\-\X{\<106>\<111>}\K{.1}{,} \-\X{\<97>\<115>}\-\X{\<75>}\-\X{\<186>}\-\X{\<106>\<113>}\-\X{\<116>\<83>} \-\X{\<101>\<111>}\-\X{\<101>\<111>}\-\X{\<91>}\-\X{\<99>\<112>}\-\X{\<88>\<111>}\-\X{\<98>\<111>}\-\X{\<100>\<113>}\-\X{\<201>} \-\X{\<102>}\-\X{\<95>\<109>\<90>}\-\X{\<186>}\-\X{\<179>}
+\-\X{\<88>\<113>}\-\X{\<83>}\-\X{\<186>\<111>}\-\X{\<98>}\-\X{\<101>}\-\X{\<116>\<98>}\-\X{\<200>\<110>}\<119>\K{.1}{\RMF---}\-\X{\<65>}\-\X{\<101>}\-\X{\<116>\<194>} \-\X{\<104>}\<119>\-\X{\<75>\<112>}\-\X{\<88>\<110>}\-\X{\<104>\<124>\<110>}\-\X{\<90>}\-\X{\<92>}\-\X{\<117>\<102>}\-\X{\<103>\<111>}\-\X{\<117>\<98>}\-\X{\<98>\<113>}\<119>
+\-\X{\<125>\<73>}\-\X{\<97>}\-\X{\<125>\<93>}\-\X{\<101>\<115>}\-\X{{\C\<170>}}\-\X{\<97>\<110>}\-\X{\<98>\<111>} \-\X{\<101>}\-\X{\<106>}\-\X{\<177>\<191>\<111>}\-\X{\<116>\<183>\<110>}\-\X{\<190>\<113>}\-\X{\<101>}\-\X{\<193>\<113>}\K{.1}{.} \-\X{\<97>}\-\X{\<92>\<113>}\-\X{\<103>\<121>}\-\X{\<97>}\-\X{\<104>\<109>\<88>\<111>}\-\X{\<103>\<109>\<183>}\-\X{\<191>\<111>}\-\X{\<116>\<194>}
+\-\X{\<101>}\-\X{\<106>}\-\X{\<177>\<187>}\-\X{\<98>\<113>}\-\X{\<116>\<83>} \-\X{\<117>\<88>\<110>}\-\X{\<88>}\-\X{\<92>\<113>}\-\X{\<104>}\-\X{\<99>\<111>}\-\X{\<187>\<109>} \-\X{\<97>}\-\X{\<91>\<113>}\-\X{\<99>}\-\X{\<104>\<124>}\-\X{\<99>}\-\X{\<186>}\-\X{\<179>} \-\X{\<117>\<73>}\-\X{\<189>\<110>}\-\X{\<104>\<124>}\-\X{\<90>\<111>}\-\X{\<183>\<110>}\-\X{\<92>\<113>}\-\X{\<201>}
+\-\X{\<116>\<78>}\-\X{\<101>\<111>}\-\X{\<98>\<113>}\-\X{\<116>\<83>} \-\X{\<73>}\-\X{\<107>\<111>}\-\X{\<101>\<109>} \-\X{\<90>\<111>}\-\X{\<92>}\<119>\-\X{\<125>\<93>}\-\X{\<88>\<111>} \-\X{\<101>}\-\X{\<106>}\-\X{\<177>\<193>\<113>}\-\X{\<101>}\-\X{\<193>\<113>}\K{.1}{.} \-\X{\<80>\<112>}\-\X{\<101>\<111>}\-\X{\<117>\<88>\<110>}\-\X{\<93>\<110>}\-\X{\<91>\<111>}\-\X{\<73>}\-\X{\<179>}
+\-\X{\<104>}\-\X{\<196>\<110>}\-\X{\<90>\<111>}\-\X{\<183>\<110>}\-\X{\<92>\<113>}\-\X{\<201>} \-\X{\<73>\<114>}\-\X{\<189>\<110>}\-\X{\<98>} \-\X{\<125>\<93>}\-\X{\<101>}\-\X{\<177>\<191>}\-\X{\<92>}\-\X{\<186>}\-\X{\<179>\<183>\<111>}\-\X{\<83>}\-\X{\<98>\<111>}\-\X{\<178>}
+\-\X{\<66>}\-\X{\<102>}\-\X{\<98>}\-\X{\<101>\<111>}\-\X{\<92>\<111>}\-\X{\<97>}\-\X{\<98>}\-\X{\<191>\<111>}\-\X{\<116>\<194>} \-\X{\<66>}\-\X{\<101>}\-\X{\<102>\<121>}\-\X{\<73>}\-\X{\<88>}\-\X{\<98>\<113>}\<119> \-\X{\<88>}\-\X{{\C\<238>}\<114>}\-\X{\<100>}\<119> \-\X{\<245>\<110>}\-\X{\<103>}\-\X{\<98>\<113>}\<119>
+\-\X{\<68>}\-\X{{\C\<86>}}\-\X{\<101>\<111>}\-\X{\<187>\<113>} \-\X{\<101>\<111>}\-\X{\<73>}\-\X{\<104>\<111>}\-\X{\<187>}\-\X{\<88>\<113>}\-\X{\<117>\<93>\<110>}\-\X{\<116>\<100>}\-\X{\<191>}\-\X{\<116>\<193>} \-\X{\<80>\<112>}\-\X{\<101>\<111>}\-\X{\<88>}\-\X{\<117>{\B\<66>}}\-\X{\<102>}\-\X{\<186>}\-\X{\<179>\<183>\<111>}\-\X{\<83>}\-\X{\<98>\<111>}\-\X{\<178>}
+\-\X{\<92>\<111>}\-\X{\<193>\<113>} \-\X{\<92>\<111>}\-\X{\<177>}{}\-\X{\<101>\<115>}\-\X{\<88>\<111>}\-\X{\<98>\<113>}\<119>\K{.1}{,} \-\X{\<73>\<114>}\-\X{\<189>\<110>}\-\X{\<98>} \-\X{\<65>}\-\X{{\C\<170>}\<124>\<110>}\-\X{\<92>}\-\X{\<191>\<111>}\-\X{\<193>\<113>}\-\X{\<201>} \-\X{\<125>\<93>}\-\X{\<117>\<78>\<110>}\-\X{\<90>}\-\X{\<92>}\-\X{\<101>\<113>}\<119>
+\-\X{\<117>\<92>}\-\X{\<117>\<83>}\-\X{\<190>} \-\X{\<66>}\-\X{\<101>}\-\X{\<102>\<121>}\-\X{\<191>\<111>}\-\X{\<193>}\-\X{\<92>\<113>}\-\X{\<104>}\-\X{\<99>\<111>}\-\X{\<187>\<110>}\-\X{{\<87>\<109>}} \-\X{\<97>}\-\X{\<92>\<113>}\-\X{\<103>\<121>}\-\X{\<116>\<194>}
+\-\X{\<104>}\<119>\-\X{\<75>\<112>}\-\X{\<88>}\-\X{\<93>}\-\X{\<99>}\-\X{\<97>\<110>}\-\X{\<98>} \-\X{\<73>}\-\X{\<107>\<111>}\-\X{\<101>\<113>}\-\X{\<73>}\-\X{\<106>\<113>}\<119> \-\X{\<101>}\-\X{\<106>}\-\X{\<177>\<193>\<113>} \-\X{\<101>\<111>}\-\X{\<73>}\-\X{\<104>\<111>}\-\X{\<187>}\-\X{\<88>\<109>}\K{.1}{.}
+}
+
+\subsection{More Examples}
+
+A number of examples illustrating various uses of the package
+can be found in the `{\tt examples}' directory. Compiled PDF
+output of the examples are in `{\tt examples/pdf}'.
+
+Following is a list of the available example files:
+
+\begin{itemize}
+\item {\tt sanjayan.mm}: This file contains selected articles
+from ``Sanjayan vol.1'' published by Mathrubhoomi.
+\item {\tt mm-pstricks.mm}: Some experiments with Malayalam
+and PSTricks
+\item {\tt screen.mm}: Another short example taken from the
+Mathrubhoomi weekend edition.
+\end{itemize}
+
+
+\subsection{Things to Remember When Typing}
+
+\begin{itemize}
+\item Commands which use \verb"{...}" (for example
+\verb"\begin", \verb"\end", \verb"\ref", \verb"\label" etc.)
+should always be outside {\tt <m{}>...</m{}>}
+\item All English text and Mathematics must be outside
+{\tt <m{}>...</m{}>}
+\item Use of non-cillu letters at the end of words must
+be explicitly entered. For example, if you type `{\tt AN}'
+you will get `{\mm \-\X{\<66>}\-\X{\<174>}}'. To get `{\mm \-\X{\<66>}\-\X{{\<87>\<109>}}}', you will
+have to type `\verb"AN<<+"'. This is applicable for
+other cillu letters also.
+\item To get words like `{\mm \-\X{\<93>}\-\X{\<177>}{}\-\X{\<101>}\-\X{\<88>}\<119>}' you have to
+type '\verb"paR{}vataM"'. If the \verb"{}" is omitted,
+you will get `{\mm \-\X{\<93>}\-\X{\<108>\<124>}\-\X{\<88>}\<119>}'.
+\item `{\tt Rya}' must be used to get `{\mm \-\X{{\<99>\<121>}}}'. (This
+is a limitation in the pre-processor, which will be
+rectified in the next release)
+\end{itemize}
+
+\subsection{Using the Pre-processor}
+\label{sec:preprocess}
+
+The file you typed must be pre-processed before feeding it
+to \LaTeX. A bash script `{\tt mal}' is included in the
+distribution to make things easier. Its syntax is:
+
+\noindent \verb"mal <file.mm> <fontname>"
+
+Available fontname options are: \textbf{rachana} for Rachana
+old lipi, \textbf{rachana2} for Rachana new lipi (this is the
+default), \textbf{keli} for the Keli font, \textbf{ildc} for the ILDC fonts, 
+and \textbf{ism} for ISM fonts. If this option is omitted,
+Rachana new lipi will be used.
+
+For example, if you want to pre-process the mm file
+for use with keli, the command would be:
+
+\noindent \verb"mal file.mm keli"
+
+For Rachana old lipi:
+
+\noindent \verb"mal file.mm rachana"
+
+Typing just {\tt mal} at the command prompt gives the syntax
+and available options.
+
+\subsection{Footnotes, Marginpars etc.}
+
+The pre-processor changes the default text font
+at the start of Malayalam text by a special macro `\verb"\mm"'.
+But this won't affect things like footnotes, marginpars etc. 
+Therefore you have to include `\verb"\mm"' inside these commands. For example,
+{\mm \-\X{\<70>}\-\X{\<73>\<109>\<104>\<110>}\-\X{\<196>\<111>}\-\X{\<179>}\footnote{\mm \-\X{\<68>}\-\X{\<90>\<110>}\-\X{\<105>}\-\X{\<99>}\-\X{\<87>}\<119>}}, the footnote in the
+previous word was typeset with
+{\tt <m{}>eksAnpiL\verb"\footnote{\mm udAharaNaM}"</m{}>}.
+In short, if strange english characters appear anywhere
+inside a group, add `\verb"\mm"' before it and the
+problem should be gone.
+
+\vfill\eject
+
+\section{Miscellany}
+
+\subsection{Obsolete Commands}
+
+The original Malayalam-\TeX\ included a command ``\verb"\RMF"''
+to typeset English matter. That means, you had to type
+``\verb"\RMF"'' before every occurence of English text.
+This is not needed anymore. All text outside {\tt <m{}>}
+and {\tt </m{}>} will be in English. However, the command
+is retained for backwards compatibility.
+
+\subsection{Sending Bug Reports}
+
+
+When reporting bugs, please include the following things
+along with a clear description of the problem:
+
+\begin{itemize}
+\item The offending sections from the source file.
+\item The log file generated by \LaTeX .
+\item If the problem is with the pre-processor, include
+{\tt mmerr.log} generated by the pre-processing script.
+\end{itemize}
+
+\subsection{Contact Information}
+
+
+\noindent E-mail: \textbf{tex@alex.org.in}
+
+\medskip
+
+\vfill\eject
+
+\appendix
+
+\section{Fonts from ILDC CD-ROM}
+
+\input ildc.tex
+
+\section{Fonts from CDAC ISM}
+
+
+\input ism.tex
+
+
+\end{document}
+

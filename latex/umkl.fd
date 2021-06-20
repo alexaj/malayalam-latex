@@ -1,0 +1,54 @@
+%
+% LaTeX2e font description file for Keli font family
+% ==================================================
+% $Id$
+% This file contains the font definitions for the Keli family in the
+% U encoding. It is used by the LaTeX New Font Selection Scheme, which
+% is part of LaTeX2e.
+%
+\ProvidesFile{Umkl.fd}[2000/6/15]
+%
+\DeclareFontFamily{U}{mkl}{\hyphenchar\font=255}
+\DeclareFontFamily{U}{MKL}{\hyphenchar\font=255}
+%
+\DeclareFontShape{U}{mkl}{m}{n}{<->mlklr}{}
+\DeclareFontShape{U}{mkl}{m}{sc}{<->mlklr}{}
+\DeclareFontShape{U}{mkl}{m}{it}{<->mlkli}{}
+\DeclareFontShape{U}{mkl}{m}{itsc}{<->mlkli}{}
+\DeclareFontShape{U}{mkl}{m}{sl}{<->mlkli}{}
+\DeclareFontShape{U}{mkl}{m}{slsc}{<->mlkli}{}
+\DeclareFontShape{U}{mkl}{b}{n}{<->mlklb}{}
+\DeclareFontShape{U}{mkl}{b}{sc}{<->mlklb}{}
+\DeclareFontShape{U}{mkl}{b}{it}{<->mlklbi}{}
+\DeclareFontShape{U}{mkl}{b}{itsc}{<->mlklbi}{}
+\DeclareFontShape{U}{mkl}{b}{sl}{<->mlklbi}{}
+\DeclareFontShape{U}{mkl}{b}{slsc}{<->mlklbi}{}
+%
+\DeclareFontShape{U}{mkl}{bx}{n}{<->mlklb}{}
+\DeclareFontShape{U}{mkl}{bx}{sc}{<->mlklb}{}
+\DeclareFontShape{U}{mkl}{bx}{it}{<->mlklbi}{}
+\DeclareFontShape{U}{mkl}{bx}{itsc}{<->mlklbi}{}
+\DeclareFontShape{U}{mkl}{bx}{sl}{<->mlklbi}{}
+\DeclareFontShape{U}{mkl}{bx}{slsc}{<->mlklbi}{}
+%
+\DeclareFontShape{U}{MKL}{m}{n}{<->mlklr}{}
+\DeclareFontShape{U}{MKL}{m}{sc}{<->mlklr}{}
+\DeclareFontShape{U}{MKL}{m}{it}{<->mlkli}{}
+\DeclareFontShape{U}{MKL}{m}{itsc}{<->mlkli}{}
+\DeclareFontShape{U}{MKL}{m}{sl}{<->mlkli}{}
+\DeclareFontShape{U}{MKL}{m}{slsc}{<->mlkli}{}
+\DeclareFontShape{U}{MKL}{b}{n}{<->mlklb}{}
+\DeclareFontShape{U}{MKL}{b}{sc}{<->mlklb}{}
+\DeclareFontShape{U}{MKL}{b}{it}{<->mlklbi}{}
+\DeclareFontShape{U}{MKL}{b}{itsc}{<->mlklbi}{}
+\DeclareFontShape{U}{MKL}{b}{sl}{<->mlklbi}{}
+\DeclareFontShape{U}{MKL}{b}{slsc}{<->mlklbi}{}
+%
+\DeclareFontShape{U}{MKL}{bx}{n}{<->mlklb}{}
+\DeclareFontShape{U}{MKL}{bx}{sc}{<->mlklb}{}
+\DeclareFontShape{U}{MKL}{bx}{it}{<->mlklbi}{}
+\DeclareFontShape{U}{MKL}{bx}{itsc}{<->mlklbi}{}
+\DeclareFontShape{U}{MKL}{bx}{sl}{<->mlklbi}{}
+\DeclareFontShape{U}{MKL}{bx}{slsc}{<->mlklbi}{}
+
+\endinput

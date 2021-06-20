@@ -1,0 +1,46 @@
+
+Installation of LaTeX for Malayalam
+-----------------------------------
+
+This release of LaTeX for Malayalam has only been tested on
+Linux systems. However, it should work on any OS
+with a working TeX distribution. Precompiled binaries
+of the preprocessor are provided for Linux only. On other
+systems, you will have to compile the sources yourself.
+
+Note: This package will not work with teTeX versions before 3.
+Please update teTeX before installing this package.
+Using the TeXLive distribution is highly recommended, since
+development of teTeX is now frozen, and T.E. himself recommends
+using TeXLive.
+
+To Install on a Linux System:
+-----------------------------
+
+Note: This package needs 'ifpdf.sty'. This should normally be
+available with your TeX distribution. If not, get it from CTAN.
+
+1. Unpack the tarball.
+
+2. Change to the distribution directory and type "./install.sh"
+   at the command prompt (without the quotes). This should
+   install all the necessary files at their proper locations.
+   You will have to choose the directories for installation.
+   The defaults should be ok for most systems.
+
+3. Everything should be working fine now. You can test the
+   installation by compiling the example sources in
+   `examples' subdirectory.
+
+Non-Linux Systems:
+------------------
+
+You will have to manually copy all the files to their
+proper positions. (Ask the local TeXpert).
+
+Documentation can be found in `{TEXMF}/doc/indic/malayalam'.
+
+
+Alex A.J. <tex@alex.org.in>
+
+

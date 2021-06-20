@@ -1,0 +1,273 @@
+% 
+mlklr Keli-Regular <mlklr.pfb
+mlkli Keli-Italic <mlkli.pfb
+mlklb Keli-Bold <mlklb.pfb
+mlklbi Keli-Bold-Italic <mlklbi.pfb
+
+mlr1r Ra1-Regular <<mlr1r.pfb
+mlr1i Ra1-Italic <<mlr1i.pfb
+mlr1b Ra1-Bold <<mlr1b.pfb
+mlr1bi Ra1-BoldItalic <<mlr1bi.pfb
+
+mlr2r Ra2-Regular <<mlr2r.pfb
+mlr2i Ra2-Italic <<mlr2i.pfb
+mlr2b Ra2-Bold <<mlr2b.pfb
+mlr2bi Ra2-BoldItalic <<mlr2bi.pfb
+
+mlr3r Ra3-Regular <<mlr3r.pfb
+mlr3i Ra3-Italic <<mlr3i.pfb
+mlr3b Ra3-Bold <<mlr3b.pfb
+mlr3bi Ra3-BoldItalic <<mlr3bi.pfb
+
+mlr4r Ra4-Regular <<mlr4r.pfb
+mlr4i Ra4-Italic <<mlr4i.pfb
+mlr4b Ra4-Bold <<mlr4b.pfb
+mlr4bi Ra4-BoldItalic <<mlr4bi.pfb
+
+mlr5r Ra5-Regular <<mlr5r.pfb
+mlr5i Ra5-Italic <<mlr5i.pfb
+mlr5b Ra5-Bold <<mlr5b.pfb
+mlr5bi Ra5-BoldItalic <<mlr5bi.pfb
+
+mlr6r Ra6-Regular <<mlr6r.pfb
+mlr6i Ra6-Italic <<mlr6i.pfb
+mlr6b Ra6-Bold <<mlr6b.pfb
+mlr6bi Ra6-BoldItalic <<mlr6bi.pfb
+
+
+% Fonts from CDAC ISM
+
+mlkr0nps ML-Karthika-Normal <MLKR0NPS.PFB
+mlkr0ips ML-Karthika-Italic <MLKR0IPS.PFB
+mlkr0bps ML-Karthika-Bold <MLKR0BPS.PFB
+mlkr0xps ML-Karthika-BoldItalic <MLKR0XPS.PFB
+
+mlja0nps ML-Jaya-Normal <MLJA0NPS.PFB
+mlja0ips ML-Jaya-Italic <MLJA0IPS.PFB
+mlja0bps ML-Jaya-Bold <MLJA0BPS.PFB
+mlja0xps ML-Jaya-BoldItalic <MLJA0XPS.PFB
+
+mlgp0nps ML-Gopika-Normal <MLGP0NPS.PFB
+mlgp0ips ML-Gopika-Italic <MLGP0IPS.PFB
+mlgp0bps ML-Gopika-Bold <MLGP0BPS.PFB
+mlgp0xps ML-Gopika-BoldItalic <MLGP0XPS.PFB
+
+mlrv0nps ML-Revathi-Normal <MLRV0NPS.PFB
+mlrv0ips ML-Revathi-Italic <MLRV0IPS.PFB
+mlrv0bps ML-Revathi-Bold <MLRV0BPS.PFB
+mlrv0xps ML-Revathi-BoldItalic <MLRV0XPS.PFB
+
+mlah0nps ML-Ashtamudi-Normal <MLAH0NPS.PFB
+mlah0ips ML-Ashtamudi-Italic <MLAH0IPS.PFB
+mlah0bps ML-Ashtamudi-Bold <MLAH0BPS.PFB
+mlah0xps ML-Ashtamudi-BoldItalic <MLAH0XPS.PFB
+
+mlbh0nps ML-Bhavana-Normal <MLBH0NPS.PFB
+mlbh0ips ML-Bhavana-Italic <MLBH0IPS.PFB
+mlbh0bps ML-Bhavana-Bold <MLBH0BPS.PFB
+mlbh0xps ML-Bhavana-BoldItalic <MLBH0XPS.PFB
+
+mlaa0nps ML-Aathira-Normal <MLAA0NPS.PFB
+mlaa0ips ML-Aathira-Italic <MLAA0IPS.PFB
+mlaa0bps ML-Aathira-Bold <MLAA0BPS.PFB
+mlaa0xps ML-Aathira-BoldItalic <MLAA0XPS.PFB
+
+mlal0nps ML-AyilyamBold-Normal <MLAL0NPS.PFB
+mlal0ips ML-AyilyamBold-Italic <MLAL0IPS.PFB
+
+mlan0bps ML-Anakha-Bold <MLAN0BPS.PFB
+mlan0xps ML-Anakha-BoldItalic <MLAN0XPS.PFB
+
+mlin0nps ML-Indulekha-Normal <MLIN0NPS.PFB
+mlin0ips ML-Indulekha-Italic <MLIN0IPS.PFB
+mlin0bps ML-Indulekha-Bold <MLIN0BPS.PFB
+mlin0xps ML-Indulekha-BoldItalic <MLIN0XPS.PFB
+
+mlkm0nps ML-Kaumudi-Normal <MLKM0NPS.PFB
+mlkm0ips ML-Kaumudi-Italic <MLKM0IPS.PFB
+mlkm0bps ML-Kaumudi-Bold <MLKM0BPS.PFB
+mlkm0xps ML-Kaumudi-BoldItalic <MLKM0XPS.PFB
+
+mlra0nps ML-Ravivarma-Normal <MLRA0NPS.PFB
+mlra0ips ML-Ravivarma-Italic <MLRA0IPS.PFB
+mlra0bps ML-Ravivarma-Bold <MLRA0BPS.PFB
+mlra0xps ML-Ravivarma-BoldItalic <MLRA0XPS.PFB
+
+mlth0nps ML-Thiruvathira-Normal <MLTH0NPS.PFB
+mlth0ips ML-Thiruvathira-Italic <MLTH0IPS.PFB
+mlth0bps ML-Thiruvathira-Bold <MLTH0BPS.PFB
+mlth0xps ML-Thiruvathira-BoldItalic <MLTH0XPS.PFB
+
+mlsd0nps ML-Sarada-Normal <MLSD0NPS.PFB
+mlsd0bps ML-Sarada-Bold <MLSD0BPS.PFB
+
+mlgi0nps ML-GauriHeavy-Normal <MLGI0NPS.PFB
+mlgi0ips ML-GauriHeavy-Italic <MLGI0IPS.PFB
+
+mlam0nps ML-Ambili-Normal <MLAM0NPS.PFB
+mlam0ips ML-Ambili-Italic <MLAM0IPS.PFB
+mlam0bps ML-Ambili-Bold <MLAM0BPS.PFB
+mlam0xps ML-Ambili-BoldItalic <MLAM0XPS.PFB
+
+mlaj0bps ML-Anjali-Bold <MLAJ0BPS.PFB
+mlaj0xps ML-Anjali-BoldItalic <MLAJ0XPS.PFB
+
+mlap0bps ML-Aparna-Bold <MLAP0BPS.PFB
+mlap0xps ML-Aparna-BoldItalic <MLAP0XPS.PFB
+
+mlas0nps ML-Aswathi-Normal <MLAS0NPS.PFB
+mlas0ips ML-Aswathi-Italic <MLAS0IPS.PFB
+mlas0bps ML-Aswathi-Bold <MLAS0BPS.PFB
+mlas0xps ML-Aswathi-BoldItalic <MLAS0XPS.PFB
+
+mlat0nps ML-Atchu-Normal <MLAT0NPS.PFB
+mlat0ips ML-Atchu-Italic <MLAT0IPS.PFB
+mlat0bps ML-Atchu-Bold <MLAT0BPS.PFB
+mlat0xps ML-Atchu-BoldItalic <MLAT0XPS.PFB
+
+mlbk0nps ML-BeckalBold-Normal <MLBK0NPS.PFB
+mlbk0ips ML-BeckalBold-Italic <MLBK0IPS.PFB
+
+mlcn0nps ML-Chandrika-Normal <MLCN0NPS.PFB
+mlcn0ips ML-Chandrika-Italic <MLCN0IPS.PFB
+mlcn0bps ML-Chandrika-Bold <MLCN0BPS.PFB
+mlcn0xps ML-Chandrika-BoldItalic <MLCN0XPS.PFB
+
+mlch0nps ML-Chithira-Normal <MLCH0NPS.PFB
+mlch0bps ML-Chithira-Bold <MLCH0BPS.PFB
+
+mldv0bps ML-Devika-Bold <MLDV0BPS.PFB
+mldv0xps ML-Devika-BoldItalic <MLDV0XPS.PFB
+
+mlgr0bps ML-Guruvayur-Bold <MLGR0BPS.PFB
+mlgr0xps ML-Guruvayur-BoldItalic <MLGR0XPS.PFB
+
+mljy0nps ML-Jyothy-Normal <MLJY0NPS.PFB
+mljy0ips ML-Jyothy-Italic <MLJY0IPS.PFB
+mljy0bps ML-Jyothy-Bold <MLJY0BPS.PFB
+mljy0xps ML-Jyothy-BoldItalic <MLJY0XPS.PFB
+
+mljs0bps ML-Jyotsna-Bold <MLJS0BPS.PFB
+mljs0xps ML-Jyotsna-BoldItalic <MLJS0XPS.PFB
+
+mlkl0bps ML-Kala-Bold <MLKL0BPS.PFB
+mlkl0xps ML-Kala-BoldItalic <MLKL0XPS.PFB
+
+mlkn0nps ML-Kamini-Normal <MLKN0NPS.PFB
+
+mlka0nps ML-Kanika-Normal <MLKA0NPS.PFB
+mlka0ips ML-Kanika-Italic <MLKA0IPS.PFB
+mlka0bps ML-Kanika-Bold <MLKA0BPS.PFB
+mlka0xps ML-Kanika-BoldItalic <MLKA0XPS.PFB
+
+mlky0bps ML-Keerthi-Bold <MLKY0BPS.PFB
+mlky0xps ML-Keerthi-BoldItalic <MLKY0XPS.PFB
+
+mlll0nps ML-Leela-Normal <MLLL0NPS.PFB
+mlll0ips ML-Leela-Italic <MLLL0IPS.PFB
+mlll0bps ML-Leela-Bold <MLLL0BPS.PFB
+mlll0xps ML-Leela-BoldItalic <MLLL0XPS.PFB
+
+mlml0nps ML-Malavika-Normal <MLML0NPS.PFB
+mlml0ips ML-Malavika-Italic <MLML0IPS.PFB
+mlml0bps ML-Malavika-Bold <MLML0BPS.PFB
+mlml0xps ML-Malavika-BoldItalic <MLML0XPS.PFB
+
+mlmy0bps ML-Mayoori-Bold <MLMY0BPS.PFB
+mlmy0xps ML-Mayoori-BoldItalic <MLMY0XPS.PFB
+
+mlna0nps ML-Nalini-Normal <MLNA0NPS.PFB
+mlna0ips ML-Nalini-Italic <MLNA0IPS.PFB
+mlna0bps ML-Nalini-Bold <MLNA0BPS.PFB
+mlna0xps ML-Nalini-BoldItalic <MLNA0XPS.PFB
+
+mlnn0nps ML-Nandini-Normal <MLNN0NPS.PFB
+mlnn0ips ML-Nandini-Italic <MLNN0IPS.PFB
+mlnn0bps ML-Nandini-Bold <MLNN0BPS.PFB
+mlnn0xps ML-Nandini-BoldItalic <MLNN0XPS.PFB
+
+mlnd0nps ML-Nanditha-Normal <MLND0NPS.PFB
+mlnd0ips ML-Nanditha-Italic <MLND0IPS.PFB
+mlnd0bps ML-Nanditha-Bold <MLND0BPS.PFB
+mlnd0xps ML-Nanditha-BoldItalic <MLND0XPS.PFB
+
+mlnl0bps ML-Nila-Bold <MLNL0BPS.PFB
+mlnl0xps ML-Nila-BoldItalic <MLNL0XPS.PFB
+
+mlon0bps ML-Onam-Bold <MLON0BPS.PFB
+mlon0xps ML-Onam-BoldItalic <MLON0XPS.PFB
+
+mlpy0nps ML-Periyar-Normal <MLPY0NPS.PFB
+mlpy0ips ML-Periyar-Italic <MLPY0IPS.PFB
+mlpy0bps ML-Periyar-Bold <MLPY0BPS.PFB
+mlpy0xps ML-Periyar-BoldItalic <MLPY0XPS.PFB
+
+mlpa0nps ML-Pooram-Normal <MLPA0NPS.PFB
+mlpa0ips ML-Pooram-Italic <MLPA0IPS.PFB
+mlpa0bps ML-Pooram-Bold <MLPA0BPS.PFB
+mlpa0xps ML-Pooram-BoldItalic <MLPA0XPS.PFB
+
+mlpr0nps ML-Poornima-Normal <MLPR0NPS.PFB
+mlpr0bps ML-Poornima-Bold <MLPR0BPS.PFB
+
+mlrh0bps ML-Rohini-Bold <MLRH0BPS.PFB
+mlrh0xps ML-Rohini-BoldItalic <MLRH0XPS.PFB
+
+mlsa0bps ML-Sabari-Bold <MLSA0BPS.PFB
+mlsa0xps ML-Sabari-BoldItalic <MLSA0XPS.PFB
+
+mlsn0bps ML-Sankara-Bold <MLSN0BPS.PFB
+mlsn0xps ML-Sankara-BoldItalic <MLSN0XPS.PFB
+
+mlsu0nps ML-Sruthy-Normal <MLSU0NPS.PFB
+mlsu0ips ML-Sruthy-Italic <MLSU0IPS.PFB
+mlsu0bps ML-Sruthy-Bold <MLSU0BPS.PFB
+mlsu0xps ML-Sruthy-BoldItalic <MLSU0XPS.PFB
+
+mlsg0bps ML-Sugatha-Bold <MLSG0BPS.PFB
+mlsg0xps ML-Sugatha-BoldItalic <MLSG0XPS.PFB
+
+mlsp0bps ML-Suparna-Bold <MLSP0BPS.PFB
+mlsp0xps ML-Suparna-BoldItalic <MLSP0XPS.PFB
+
+mlsr0nps ML-Surya-Normal <MLSR0NPS.PFB
+mlsr0bps ML-Surya-Bold <MLSR0BPS.PFB
+
+mlsw0nps ML-SwathyBold-Normal <MLSW0NPS.PFB
+mlsw0ips ML-SwathyBold-Italic <MLSW0IPS.PFB
+
+mlte0nps ML-Theyyam-Normal <MLTE0NPS.PFB
+mlte0ips ML-Theyyam-Italic <MLTE0IPS.PFB
+mlte0bps ML-Theyyam-Bold <MLTE0BPS.PFB
+mlte0xps ML-Theyyam-BoldItalic <MLTE0XPS.PFB
+
+mltu0nps ML-Thunchan-Normal <MLTU0NPS.PFB
+mltu0ips ML-Thunchan-Italic <MLTU0IPS.PFB
+mltu0bps ML-Thunchan-Bold <MLTU0BPS.PFB
+mltu0xps ML-Thunchan-BoldItalic <MLTU0XPS.PFB
+
+mlva0bps ML-Vaisali-Bold <MLVA0BPS.PFB
+mlva0xps ML-Vaisali-BoldItalic <MLVA0XPS.PFB
+
+mlvr0nps ML-Varsha-Normal <MLVR0NPS.PFB
+mlvr0ips ML-Varsha-Italic <MLVR0IPS.PFB
+mlvr0bps ML-Varsha-Bold <MLVR0BPS.PFB
+mlvr0xps ML-Varsha-BoldItalic <MLVR0XPS.PFB
+
+mlvn0nps ML-Vinay-Normal <MLVN0NPS.PFB
+mlvn0bps ML-Vinay-Bold <MLVN0BPS.PFB
+
+mlvs0nps ML-Visakham-Normal <MLVS0NPS.PFB
+mlvs0ips ML-Visakham-Italic <MLVS0IPS.PFB
+mlvs0bps ML-Visakham-Bold <MLVS0BPS.PFB
+mlvs0xps ML-Visakham-BoldItalic <MLVS0XPS.PFB
+
+mlvh0nps ML-Vishu-Normal <MLVH0NPS.PFB
+mlvh0ips ML-Vishu-Italic <MLVH0IPS.PFB
+mlvh0bps ML-Vishu-Bold <MLVH0BPS.PFB
+mlvh0xps ML-Vishu-BoldItalic <MLVH0XPS.PFB
+
+mlys0bps ML-Yashasri-Bold <MLYS0BPS.PFB
+mlys0xps ML-Yashasri-BoldItalic <MLYS0XPS.PFB
+
+

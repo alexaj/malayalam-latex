@@ -1,0 +1,560 @@
+% malayalam.sty -- macros for typesetting Malayalam using LaTeX2e
+%
+% Alex A.J. <tex@alex.org.in>
+%
+% 10 Nov 2007 : Added support for ILDC Fonts
+% 07 Jun 2005 : Version 0.9.2
+% 21 Jan 2005 : Added support for ISM Fonts
+% 03 Apr 2003 : Deleted unwanted stuff
+% 27 Feb 2003 : Changed default font to rachana
+%    Nov 2002 : First version
+%
+%
+%% Copyright Alex A.J.
+%
+% This program may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.2
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.2 or later is part of all distributions of LaTeX
+% version 1999/12/01 or later.
+%
+
+
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesFile{malayalam.sty}
+
+\RequirePackage{ifpdf}
+
+% trick from the TeXbook, p. 375
+{\catcode`p=12 \catcode`t=12 \gdef\xxx#1pt{#1}}
+\let\getfactor=\xxx
+\def\getslant#1{\expandafter\getfactor\the\fontdimen1#1}
+
+\def\RMF{\fontencoding{T1}\fontfamily{ptm}\selectfont}
+
+
+%%%%%% single letter commands
+
+\def\K#1{\kern#1em}
+\def\X{\leavevmode\hbox}
+\def\<#1>{\leavevmode{\char#1}}
+
+% Macros for the default font (Rachana)
+
+\def\mm{\fontencoding{U}\fontfamily{mr1}\selectfont}
+\def\B{\fontencoding{U}\fontfamily{mr2}\selectfont}
+\def\C{\fontencoding{U}\fontfamily{mr3}\selectfont}
+\def\D{\fontencoding{U}\fontfamily{mr4}\selectfont}
+\def\E{\fontencoding{U}\fontfamily{mr5}\selectfont}
+\def\F{\fontencoding{U}\fontfamily{mr6}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<201>}\X{\<83>}\X{\<183>}\<119>}
+\def\chaptername{\mm \X{\<65>}\X{{\C\<170>}\<121>\<110>}\X{\<98>}\<119>}
+\def\listfigurename{\mm \X{\<78>\<111>}\X{\<125>\<88>}\X{\<186>}\X{\<179>}}
+\def\listtablename{%
+\mm \X{\<117>\<83>}\X{\<95>\<111>}\X{\<106>\<113>}\X{\<73>}\X{\<179>}}
+\def\tablename{\mm \X{\<117>\<83>}\X{\<95>\<111>}\X{\<179>}}
+\def\figurename{\mm \X{\<78>\<111>}\X{\<125>\<88>}\<119>}
+\def\partname{\mm \X{\<93>\<110>}\X{\<177>\<189>\<109>}}
+\def\abstractname{\mm \X{\<104>}\<119>\X{\<125>\<75>}\X{\<105>}\<119>}
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<113>}\X{\<95>}\X{{\C\<225>}}\<119>}
+
+%ILDC-CDAC Fonts
+\def\ambili{\fontencoding{U}\fontfamily{mlgistambili}\selectfont}
+\def\ashtamudi{\fontencoding{U}\fontfamily{mlgistashtamudi}\selectfont}
+\def\aswathi{\fontencoding{U}\fontfamily{mlgistaswathi}\selectfont}
+\def\bhanu{\fontencoding{U}\fontfamily{mlgistbhanu}\selectfont}
+\def\chippi{\fontencoding{U}\fontfamily{mlgistchippi}\selectfont}
+\def\karthika{\fontencoding{U}\fontfamily{mlgistkarthika}\selectfont}
+\def\kaumudi{\fontencoding{U}\fontfamily{mlgistkaumudi}\selectfont}
+\def\kottakkal{\fontencoding{U}\fontfamily{mlgistkottakkal}\selectfont}
+\def\makam{\fontencoding{U}\fontfamily{mlgistmakam}\selectfont}
+\def\malavika{\fontencoding{U}\fontfamily{mlgistmalavika}\selectfont}
+\def\mridula{\fontencoding{U}\fontfamily{mlgistmridula}\selectfont}
+\def\payippad{\fontencoding{U}\fontfamily{mlgistpayippad}\selectfont}
+\def\periyar{\fontencoding{U}\fontfamily{mlgistperiyar}\selectfont}
+\def\revathi{\fontencoding{U}\fontfamily{mlgistrevathi}\selectfont}
+\def\sabari{\fontencoding{U}\fontfamily{mlgistsabari}\selectfont}
+\def\sruthy{\fontencoding{U}\fontfamily{mlgistsruthy}\selectfont}
+
+%ISM Fonts
+\def\ISMkarthika{\fontencoding{U}\fontfamily{mlkarthika}\selectfont}
+\def\jaya{\fontencoding{U}\fontfamily{mljaya}\selectfont}
+\def\gopika{\fontencoding{U}\fontfamily{mlgopika}\selectfont}
+\def\ISMrevathi{\fontencoding{U}\fontfamily{mlrevathi}\selectfont}
+\def\ISMashtamudi{\fontencoding{U}\fontfamily{mlashtamudi}\selectfont}
+\def\bhavana{\fontencoding{U}\fontfamily{mlbhavana}\selectfont}
+\def\aathira{\fontencoding{U}\fontfamily{mlaathira}\selectfont}
+\def\ayilyambold{\fontencoding{U}\fontfamily{mlayilyambold}\selectfont}
+\def\anakha{\fontencoding{U}\fontfamily{mlanakha}\selectfont}
+\def\indulekha{\fontencoding{U}\fontfamily{mlindulekha}\selectfont}
+\def\ISMkaumudi{\fontencoding{U}\fontfamily{mlkaumudi}\selectfont}
+\def\ravivarma{\fontencoding{U}\fontfamily{mlravivarma}\selectfont}
+\def\thiruvathira{\fontencoding{U}\fontfamily{mlthiruvathira}\selectfont}
+\def\sarada{\fontencoding{U}\fontfamily{mlsarada}\selectfont}
+\def\gauri{\fontencoding{U}\fontfamily{mlgauri}\selectfont}
+
+\DeclareOption{keli}{%
+\def\mm{\fontencoding{U}\fontfamily{mkl}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}%
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}%
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}%
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}%
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{rachana}{%
+%\def\B{\fontencoding{U}\fontfamily{mr2}\selectfont}%
+%\def\C{\fontencoding{U}\fontfamily{mr3}\selectfont}%
+%\def\D{\fontencoding{U}\fontfamily{mr4}\selectfont}%
+%\def\E{\fontencoding{U}\fontfamily{mr5}\selectfont}%
+%\def\F{\fontencoding{U}\fontfamily{mr6}\selectfont}%
+\def\contentsname{\mm \X{\<68>}\X{\<201>}\X{\<83>}\X{\<183>}\<119>}%
+\def\chaptername{\mm \X{\<65>}\X{{\C\<170>}\<121>\<110>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<111>}\X{{\C\<94>}}\X{\<186>}\X{\<179>}}%
+\def\listtablename{%
+\mm \X{\<117>\<83>}\X{\<95>\<111>}\X{{\F\<59>}}\X{\<73>}\X{\<179>}}%
+\def\tablename{\mm \X{\<117>\<83>}\X{\<95>\<111>}\X{\<179>}}%
+\def\figurename{\mm \X{\<78>\<111>}\X{{\C\<94>}}\<119>}%
+\def\partname{\mm \X{\<93>\<110>}\X{\<177>\<189>\<109>}}%
+\def\abstractname{\mm \X{\<104>}\<119>\X{{\B\<114>}}\X{\<105>}\<119>}%
+\def\appendixname{\mm \X{\<65>}\X{{\C\<204>}}\X{\<95>}\X{{\C\<225>}}\<119>}%
+}
+%
+% Fonts from ILDC-CDAC 
+%
+\DeclareOption{ambili}{%
+\def\mm{\fontencoding{U}\fontfamily{mlgistambili}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}%
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}% 
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}% 
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}% 
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}% 
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{ashtamudi}{% 
+\def\mm{\fontencoding{U}\fontfamily{mlgistashtamudi}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}% 
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}% 
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}% 
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}% 
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{aswathi}{%
+\def\mm{\fontencoding{U}\fontfamily{mlgistaswathi}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}% 
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}% 
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}% 
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}% 
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}% 
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{bhanu}{%
+\def\mm{\fontencoding{U}\fontfamily{mlgistbhanu}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}% 
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}% 
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}% 
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}% 
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{chippi}{%
+\def\mm{\fontencoding{U}\fontfamily{mlgistchippi}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}% 
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}% 
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}% 
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}% 
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{karthika}{%
+\def\mm{\fontencoding{U}\fontfamily{mlgistkarthika}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}% 
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}% 
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}% 
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}% 
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{kaumudi}{%
+\def\mm{\fontencoding{U}\fontfamily{mlgistkaumudi}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}% 
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}% 
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}% 
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}% 
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{kottakkal}{%
+\def\mm{\fontencoding{U}\fontfamily{mlgistkottakkal}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}% 
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}% 
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}% 
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}% 
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{makam}{%
+\def\mm{\fontencoding{U}\fontfamily{mlgistmakam}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}% 
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}% 
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}% 
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}% 
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{malavika}{%
+\def\mm{\fontencoding{U}\fontfamily{mlgistmalavika}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}% 
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}% 
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}% 
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}% 
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{mridula}{%
+\def\mm{\fontencoding{U}\fontfamily{mlgistmridula}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}% 
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}% 
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}% 
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}% 
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{payippad}{%
+\def\mm{\fontencoding{U}\fontfamily{mlgistpayippad}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}% 
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}% 
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}% 
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}% 
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{periyar}{%
+\def\mm{\fontencoding{U}\fontfamily{mlgistperiyar}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}% 
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}% 
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}% 
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}% 
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{revathi}{%
+\def\mm{\fontencoding{U}\fontfamily{mlgistrevathi}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}% 
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}% 
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}% 
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}% 
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{sabari}{%
+\def\mm{\fontencoding{U}\fontfamily{mlgistsabari}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}% 
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}% 
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}% 
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}% 
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{sruthy}{%
+\def\mm{\fontencoding{U}\fontfamily{mlgistsruthy}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}% 
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}% 
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}% 
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}% 
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+%
+% Fonts from ISM
+%
+\DeclareOption{ISMkarthika}{%
+\def\mm{\fontencoding{U}\fontfamily{mlkarthika}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}%
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}%
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}%
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}%
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{jaya}{%
+\def\mm{\fontencoding{U}\fontfamily{mljaya}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}%
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}%
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}%
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}%
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{gopika}{%
+\def\mm{\fontencoding{U}\fontfamily{mlgopika}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}%
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}%
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}%
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}%
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{ISMrevathi}{%
+\def\mm{\fontencoding{U}\fontfamily{mlrevathi}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}%
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}%
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}%
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}%
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{ISMashtamudi}{%
+\def\mm{\fontencoding{U}\fontfamily{mlashtamudi}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}%
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}%
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}%
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}%
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{bhavana}{%
+\def\mm{\fontencoding{U}\fontfamily{mlbhavana}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}%
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}%
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}%
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}%
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{aathira}{%
+\def\mm{\fontencoding{U}\fontfamily{mlaathira}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}%
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}%
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}%
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}%
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{ayilyambold}{%
+\def\mm{\fontencoding{U}\fontfamily{mlayilyambold}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}%
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}%
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}%
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}%
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{anakha}{%
+\def\mm{\fontencoding{U}\fontfamily{mlanakha}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}%
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}%
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}%
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}%
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{indulekha}{%
+\def\mm{\fontencoding{U}\fontfamily{mlindulekha}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}%
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}%
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}%
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}%
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{ISMkaumudi}{%
+\def\mm{\fontencoding{U}\fontfamily{mlkaumudi}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}%
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}%
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}%
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}%
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{ravivarma}{%
+\def\mm{\fontencoding{U}\fontfamily{mlravivarma}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}%
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}%
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}%
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}%
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{thiruvathira}{%
+\def\mm{\fontencoding{U}\fontfamily{mlthiruvathira}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}%
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}%
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}%
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}%
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{sarada}{%
+\def\mm{\fontencoding{U}\fontfamily{mlsarada}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}%
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}%
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}%
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}%
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{gauri}{%
+\def\mm{\fontencoding{U}\fontfamily{mlgauri}\selectfont}
+\def\contentsname{\mm \X{\<68>}\X{\<197>}\X{\<83>}\X{\<161>}\<119>}%
+\def\chaptername{\mm \X{\<65>}\X{\<178>\<121>\<109>}\X{\<98>}\<119>}%
+\def\listfigurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\X{\<167>}\X{\<196>}}%
+\def\listtablename{%
+\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<102>\<112>}\X{\<73>}\X{\<196>}}%
+\def\tablename{\mm \X{\<116>\<83>}\X{\<95>\<110>}\X{\<196>}}%
+\def\figurename{\mm \X{\<78>\<110>}\X{\<123>\<88>}\<119>}%
+\def\partname{\mm \X{\<93>\<109>}\X{\<192>\<171>\<118>}}%
+\def\abstractname{\mm \X{\<107>}\<119>\X{\<123>\<75>}\X{\<108>}\<119>}%
+\def\appendixname{\mm \X{\<65>}\X{\<92>\<112>}\X{\<95>}\X{\<212>}\<119>}%
+}
+\DeclareOption{english}{%
+\def\contentsname{Contents}
+\def\listfigurename{List of Figures}
+\def\listtablename{List of Tables}
+\def\bibname{Bibliography}
+\def\indexname{Index}
+\def\figurename{Figure}
+\def\tablename{Table}
+\def\partname{Part}
+\def\chaptername{Chapter}
+\def\appendixname{Appendix}
+\def\abstractname{Abstract}
+}
+\ProcessOptions\relax
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\ifpdf
+\pdfmapfile{=malayalam_pdftex.map}
+\fi
+
+\endinput
+
+%%%%%% end of malayalam.sty

@@ -1,0 +1,171 @@
+% mmr_keli.trs --- Malayalam transcription definition for TeX pre-processor
+%
+% 21 May 2004 Alex AJ (0.9a Update)
+% November 2002 Alex A.J.
+% $Id$
+
+@atbegin "<malayalam>" "<m>"       % this starts Malayalam text in ASCII
+@atend   "</malayalam>" "</m>"     % this ends Malayalam text in ASCII
+
+% @table format:
+% <pattern> <space> <command> <space> [ <parameter> ][ <comment> ]
+
+@table
+
+% vowels
+
+"a"     = "\d05"                % a
+"aa"    = "\d06"                % aa
+"A"     = "\d06"
+"i"     = "\d07"                % i
+"ii"    = "\d08"                % ii
+"I"     = "\d08"
+"u"     = "\d09"
+"uu"    = "\d10"
+"U"     = "\d10"
+".r"    = "\d11"                % vocalic r
+".r.r"  = "\d96"                % vocalic rr
+".R"    = "\d96"
+".l"    = "\d12"                % vocalic l
+".l.l"  = "\d97"                % vocalic ll
+".L"    = "\d97"
+"e"     = "\d14"
+"ee"    = "\d15"
+"E"     = "\d15"
+"ai"    = "\d16"
+"o"     = "\d18"
+"oo"    = "\d19"
+"O"     = "\d19"
+"au"    = "\d20"
+"au\""  = "\d87"                % au length mark
+
+% modifiers
+
+"M"     = "\d02"                % anusvara
+"H"     = "\d03"                % visarga
+
+% consonants will be print in cillu form if no vowel follows
+
+"k"     = "\d21"
+"kh"    = "\d22"
+"g"     = "\d23"
+"gh"    = "\d24"
+"n\""   = "\d25"                % nga
+
+"c"     = "\d26"
+"ch"    = "\d27"
+"j"     = "\d28"
+"jh"    = "\d29"
+"n~"    = "\d30"                % nya
+
+"T"     = "\d31"
+"Th"    = "\d32"
+"D"     = "\d33"
+"Dh"    = "\d34"
+"N"     = "\d35"
+
+"t"     = "\d36"
+"th"    = "\d37"
+"d"     = "\d38"
+"dh"    = "\d39"
+"n"     = "\d40"
+%"n_"    = "\d40"
+
+"p"     = "\d42"
+"ph"    = "\d43"
+"f"     = "\d43"
+"b"     = "\d44"
+"bh"    = "\d45"
+"m"     = "\d46"
+
+"y"     = "\d47"
+"r"     = "\d48"
+"R"     = "\d49"
+"t_"    = "\d49"
+"l"     = "\d50"
+"L"     = "\d51"
+"zh"    = "\d52"
+"v"     = "\d53"
+"sh"    = "\d54"
+"S"     = "\d55"
+"s"     = "\d56"
+"h"     = "\d57"
+
+"+"     = "\d77"                % virama
+"u+"    = "\d77"                % half u
+
+% digits
+
+"0"     = "\d102"
+"1"     = "\d103"
+"2"     = "\d104"
+"3"     = "\d105"
+"4"     = "\d106"
+"5"     = "\d107"
+"6"     = "\d108"
+"7"     = "\d109"
+"8"     = "\d110"
+"9"     = "\d111"
+
+% special (arbitrary code positions)
+
+"<<"    = "\d127"               % join
+">>"    = "\d126"               % non join
+"[]"    = "\d125"               % dotted circle
+" "     = "\d124"               % space
+"\t"    = "\d124"               % tab = space
+
+% interpunction
+
+% non malayalam things
+
+">"     f                       % eliminate ambiguities
+"\\"    t                       % copy TeX command
+"^"     f                       % forget about capital letters
+"\\$"   p "\\$"
+"%"     s                       % skip comment
+"{"     p "{"
+"}"     p "}"
+"\n"    p "\n"                  % newline
+
+% things borrowed from roman
+
+"."     p "."
+","     p ","
+":"     p ":"
+";"     p ";"
+"`"     p "\\K{-.1}{\\RMF`}"
+"``"    p "\\K{-.1}{\\RMF``}"
+"'"     p "\\K{.1}{\\RMF'}"
+"''"    p "\\K{.1}{\\RMF''}"
+"-"     p "{\\RMF-}"
+"--"    p "{\\RMF--}"
+"---"   p "\\K{.1}{\\RMF---}"
+"?"     p "\\K{.1}{?}"
+"!"     p "!"
+"("     p "("
+")"     p "\\K{.1}{)}"
+"["     p "{\\RMF[}"
+"]"     p "\\K{.1}{\\RMF]}"
+"/"     p "/"
+"\\%"   p "{\\RMF\\%}"
+"~"     p "~"
+
+"\\mm"                  p "\\mm"
+"\\part{"               p "\\part{\\mm "
+"\\part*{"              p "\\part*{\\mm "
+"\\chapter{"            p "\\chapter{\\mm "
+"\\chapter*{"           p "\\chapter*{\\mm "
+"\\section{"            p "\\section{\\mm "
+"\\section*{"           p "\\section*{\\mm "
+"\\subsection{"         p "\\subsection{\\mm "
+"\\subsection*{"        p "\\subsection*{\\mm "
+"\\subsubsection{"      p "\\subsubsection{\\mm "
+"\\subsubsection*{"     p "\\subsubsection*{\\mm "
+"\\abstract{"		p "\\abstract{\\mm "
+"\\itshape"             p "\\itshape"
+"\\it"                  p "\\it\\mm "
+"\\bfseries"            p "\\bfseries"
+"\\bf"                  p "\\bf\\mm "
+
+@end
